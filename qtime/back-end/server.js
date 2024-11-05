@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
@@ -9,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // MySQL 데이터베이스 설정
 const db = mysql.createConnection({
-  host: 'db-private-2a.c9oaa8seu3yz.ap-northeast-2.rds.amazonaws.com',
-  user: 'seungmin',
-  password: 'your_db_password', // 여기에 실제 비밀번호를 입력하세요
-  database: 'qt_db'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 db.connect((err) => {
