@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --host 0.0.0.0 --port 8080 --config build/webpack.dev.conf.js",
     "e2e": "node test/e2e/runner.js",
     "start": "npm run dev",
     "test": "npm run unit && npm run e2e",
