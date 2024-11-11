@@ -70,7 +70,7 @@ app.post('/api/signup', (req, res) => {
 });
 
 // 서버 시작
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.WAS_PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

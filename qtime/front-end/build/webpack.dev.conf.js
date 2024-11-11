@@ -40,7 +40,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     publicPath: config.dev.assetsPublicPath,
     proxy: {
       '/api/': { // /api/로 시작하는 url은 아래의 전체 도메인을 추가하고, 옵션을 적용 
-        target: 'http://localhost:3000',
+        target: process.env.DEV_APP_API_URL,
         changeOrigin: true, // cross origin 허용 설정
       },
     },
